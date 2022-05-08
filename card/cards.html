@@ -11,13 +11,13 @@
     <style>
         .setCard{
             position: absolute;
-            width: 450px;
+            width: 390px;
             height: 600px;
             left: 200px;
-            top: 50px;
+            top: 30px;
             padding: 20px;
             background: #FFFFFF;
-            border-radius: 80px;
+            border-radius: 70px;
             /* border: 1px solid black; */
         }
         #isPublic{
@@ -35,10 +35,10 @@
             font-size: 32px;
         }
         .test{
-            width: 346px;
-            height: 179px;
-            left: 676px;
-            top: 535px;
+            width: 100%;
+            height: 131px;
+            /* left: 676px;
+            top: 535px; */
 
             padding: 20px;
             background: #E5E5E5;
@@ -47,6 +47,43 @@
 
             overflow: auto;
             resize: vertical;
+        }
+        #cardInput > tbody > tr > td > input{
+            border: none;
+            border-bottom: 2px solid black;
+        }
+        #cardInput > tbody > tr > td{
+            padding-bottom: 14px;
+            
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        /* buttons */
+        .btn{
+            width: 90px;
+            height: 45px;
+            border-radius: 52px;
+
+            /* font-family: 'Inter'; */
+            /* font-style: normal; */
+            text-align: center;
+            font-weight: 600;
+            font-size: 18px;
+
+            color: #FFFFFF;
+        }
+        .btn-cancel{
+            background: #FF2525;
+            margin-right: auto;
+        }
+        .btn-confirm{
+            background: #1A0808;
+        }
+        .modal-footer{
+            display: flex;
+            padding: 0 30px;
+            border-top: none;
         }
     </style>
     <script>
@@ -80,21 +117,43 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <h5 class="modal-title" id="cardModalLabel">Modal title</h5>
+                    <!-- <h5 class="modal-title" id="cardModalLabel">Modal title</h5> -->
                     <button id="isPublic"></button>
                 </div>
                 <div class="modal-body">
-                    <div><span>標題：</span> <input type="text" name="title"></div>
-                    <div><span>起始日期：</span> <input type="datetime-local" name="startDT"></div>
-                    <div><span>結束日期：</span> <input type="datetime-local" name="endDT"></div>
-                    <div><span>連結：</span> <input type="text" name="link"></div>
-                    <div><span>邀請：</span> <input type="text" name="invite"></div>
-                    <div><span>顏色分類：</span> <input type="color" name="color"></div>
-                    <textarea class="test" rows="3" placeholder="備註： "></textarea>
+                    <form action="" method="post" name="eventCard">
+                        <table id="cardInput">
+                            <tr>
+                                <td>標題：</td>
+                                <td><input type="text" name="title"></td>
+                            </tr>
+                            <tr>
+                                <td>起始日期：</td>
+                                <td><input type="datetime-local" name="startDT"></td>
+                            </tr>
+                            <tr>
+                                <td>結束日期：</td>
+                                <td><input type="datetime-local" name="endDT"></td>
+                            </tr>
+                            <tr>
+                                <td>連結：</td>
+                                <td><input type="text" name="link"></td>
+                            </tr>
+                            <tr>
+                                <td>邀請：</td>
+                                <td><input type="text" name="invite"></td>
+                            </tr>
+                            <tr>
+                                <td>顏色分類：</td>
+                                <td><input type="color" name="color"></td>
+                            </tr>
+                        </table>
+                        <textarea class="test" rows="3" placeholder="備註： "></textarea>
+                    </form>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
-                  <button type="button" class="btn btn-primary">儲存</button>
+                  <button type="button" class="btn btn-cancel" data-dismiss="modal">取消</button>
+                  <button type="button" class="btn btn-confirm">儲存</button>
                 </div>
             </div>
         </div>
