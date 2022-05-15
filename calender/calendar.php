@@ -6,6 +6,7 @@
     <script src='src/main.js'></script>
 
     <script src="src/locales-all.js"></script>
+    <script src="card/cards.html"></script>
 
     <link rel="stylesheet" href="style.css">
 
@@ -32,9 +33,17 @@
     </script>
 
   </head>
+
   <body>
+    
+  <?php
+  //include("../card/cards.html");
+  ?>
     <div class="container">
-        <div id='calendar'></div>
-    </div>
+      
+      <div id='calendar'></div>
+      </div>
   </body>
+
 </html>
+
