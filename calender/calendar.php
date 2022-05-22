@@ -2,14 +2,14 @@
 <html lang='en'>
   <head>
     <meta charset='utf-8' />
-    <link href='src/main.css' rel='stylesheet' />
+    <link href='./src/main.css' rel='stylesheet'>
     <script src='src/main.js'></script>
 
     <script src="src/locales-all.js"></script>
 
     <!-- <script src="card/cards.html"></script> -->
 
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="style.css">
 
     <script>
 
@@ -49,9 +49,10 @@
             include("./card/cards.html");
           ?>
       </div>
-          
-      <div id='calendar'></div>
-      </div>
+      
+        <div id='calendar'></div>
+
+    </div>
   </body>
 
 </html>
