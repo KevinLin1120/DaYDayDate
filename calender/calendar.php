@@ -44,7 +44,7 @@
   
     <div class="container">
 
-      <div id='newEvent'>
+      <div id='addEvent'>
         <?php
             include("./card/cards.html");
           ?>

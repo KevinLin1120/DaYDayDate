@@ -14,7 +14,7 @@
     height: 30px;
     background-color: transparent;
     border: none;
-    background-image: url('./images/unlock.svg');
+    background-image: url('./card/images/unlock.svg');
 }
 .modal-header .close{
     margin: 1px;
