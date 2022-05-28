@@ -1,7 +1,6 @@
 /* .container {
-    width: 1000px;
-    height: 1000px;
-    // 置中 
+    width: 600px;
+    height: 800px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -9,8 +8,9 @@
     border: 1px solid gray;
     padding: 20px;
     background-color: white;
-} 
-*/
+}    */
+
+
     
 .fc .fc-toolbar-title {
 color: brown;
@@ -21,3 +21,6 @@ font-size: 30px;
 color: blue;
 font-size: 15px;
 }
+
+/*page*/
+
