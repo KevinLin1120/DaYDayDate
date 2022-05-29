@@ -6,9 +6,10 @@
     <script src='src/main.js'></script>
 
     <script src="src/locales-all.js"></script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- <script src="card/cards.html"></script> -->
-
+    
+    <script src="./src/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="style.css">
 
     <style>
@@ -28,13 +29,13 @@
       }
       .side-menu{
           width: 20%;
-          height:600px;
+          height: 650px;
           background-color:#394B6F;
       }
       .calender-back{
           background-color: lightgray;
-          height: 600px;
-          width:60%; 
+          height: 650px;
+          width:70%; 
           border-radius:20px;
           overflow: flex;
           margin: auto;
@@ -55,7 +56,14 @@
       i{
           float: right;
           margin-right: 20px;
-          margin-top: 5px
+          margin-top: 10px;
+          width: 20px;
+          height: 20px;
+      }
+
+      /*calander */
+      #calendar{
+        height: 650px;
       }
     </style>
 
@@ -80,7 +88,13 @@
 
         });
         calendar.render();
+        
       });
+      $(document).ready(
+        function(){
+          $("#fc-dom-1").after(          );
+        }
+      );
     </script>
   </head>
 
