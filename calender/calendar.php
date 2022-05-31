@@ -10,7 +10,8 @@
     <!-- <script src="card/cards.html"></script> -->
     
     <script src="./src/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"  href="./style.css">
+    <link rel="stylesheet"  href="./card/cards.css">
 
     <style>
       label.logo{
@@ -65,6 +66,33 @@
       #calendar{
         height: 650px;
       }
+      
+      /* buttons */
+      .btn{
+          width: 80px;
+          height: 30px;
+          border-radius: 50px;
+
+          /* font-family: 'Inter'; */
+          /* font-style: normal; */
+          text-align: center;
+          font-weight: 600;
+          font-size: 15px;
+          color: blue;
+      }
+      .btn-cancel{
+          background: red;
+          margin-right: auto;
+      }
+      .btn-confirm{
+          background: black;
+      }
+      .modal-footer{
+          display: flex;
+          padding: 0 30px;
+          border-top: none;
+      }
+      
     </style>
 
     <script>
@@ -92,7 +120,7 @@
       });
       $(document).ready(
         function(){
-          $("#fc-dom-1").after(          );
+          $("#fc-dom-1").append('<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editCard">新增行程</button>');
         }
       );
     </script>
