@@ -50,24 +50,24 @@
 
 /* buttons */
 .btn{
-    width: 90px;
-    height: 45px;
-    border-radius: 52px;
+    width: 50px;
+    height: 30px;
+    border-radius: 50px;
 
     /* font-family: 'Inter'; */
     /* font-style: normal; */
     text-align: center;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 15px;
 
-    color: #FFFFFF;
+    color: blue;
 }
 .btn-cancel{
-    background: #FF2525;
+    background: red;
     margin-right: auto;
 }
 .btn-confirm{
-    background: #1A0808;
+    background: black;
 }
 .modal-footer{
     display: flex;
