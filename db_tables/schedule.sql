@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： localhost
--- 產生時間： 2022 年 06 月 05 日 06:44
+-- 產生時間： 2022 年 06 月 05 日 10:24
 -- 伺服器版本： 10.4.17-MariaDB
 -- PHP 版本： 7.4.15
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `schedule` (
   `_id` int(11) NOT NULL,
   `userId` tinyint(4) NOT NULL,
-  `title` tinyint(4) NOT NULL,
+  `title` varchar(4) NOT NULL,
   `stDT` datetime NOT NULL,
   `enDT` datetime NOT NULL,
   `link` longtext DEFAULT NULL,
