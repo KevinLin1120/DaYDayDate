@@ -12,7 +12,8 @@
     if($db_link -> connect_error != ""){
         echo "database connect error!";
     }
-    // else{
-    //     echo "success";
-    // }
+    else{
+        $db_link -> query("SET NAMES 'utf8'");
+        echo "success";
+    }
 ?>
