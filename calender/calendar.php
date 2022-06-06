@@ -3,9 +3,6 @@
   <head>
     <meta charset='utf-8' />
     <link href='./src/main.css' rel='stylesheet'>
-    <link rel="stylesheet"  href="./style.css">
-    <link rel="stylesheet"  href="./card/cards.css">
-
     <script src='src/main.js'></script>
 
     <script src="src/locales-all.js"></script>
@@ -14,6 +11,9 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
     <script src="./src/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet"  href="./style.css">
+    <link rel="stylesheet"  href="./card/cards.css">
+
 
 
     <style>
@@ -39,6 +39,7 @@
       }
       .calender-back{
           background-color: lightgray;
+          width: 60%;
           height: 650px;
           border-radius:20px;
           overflow: flex;
@@ -185,18 +186,21 @@
       );
 
       $(document).ready(function(){
-            var isPublic = true;
-            $("#isPublic").mouseup(function(){
-                if(isPublic){ // If it's public, switch to private
-                    $(this).css("background-image", 'url(./card/images/lock.svg)');
-                    isPublic = false;
-                }
-                else{ // If it's private, switch to public
-                    $(this).css("background-image", 'url(./card/images/unlock.svg)');
-                    isPublic = true;
-                }
-            });
-        });
+          var isPublic = true;
+          $("#isPublic").mouseup(function(){
+              if(isPublic){ // If it's public, switch to private
+                  $(this).css("background-image", 'url(./card/images/lock.svg)');
+                  isPublic = false;
+              }
+              else{ // If it's private, switch to public
+                  $(this).css("background-image", 'url(./card/images/unlock.svg)');
+                  isPublic = true;
+              }
+          });
+          $('btn btn-confirm').click(function(){
+            
+          });
+      });
     </script>
   </head>
 
