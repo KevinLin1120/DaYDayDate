@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
     <style>
     html{
@@ -30,8 +29,23 @@
     }
     .sign-up h1{
         margin-bottom: 30px;
+        margin-top: 20px;
     }
-    .input-box{       
+    .sign-in{
+        text-align: left;
+    }
+    .sign-in a{
+        color:lightslategray;
+    }
+    .forgot{
+        text-align: right;
+        margin-left: auto;
+    }
+    .forgot a{
+        color:lightslategray;
+    }
+    .input-box{
+       
         padding: 10px;
         margin: 10px 0;
         width: 70%;
@@ -45,7 +59,7 @@
         padding: 10px;
         border-radius: 20px;
         font-size: 18px;
-        margin: 20px 0;
+        margin: 60px 0;
         border:none;
         outline: none;
         cursor: pointer;
@@ -74,26 +88,43 @@
         float: right;
         margin-right: 20px;
     }
+    .fsBtn{
+        display: flex;
+        padding: 0 65px;
+        text-decoration: underline;
+    }
+    input[type=search] {
+    float: right;
+    border: 1px solid #000;
+    padding: 4px 12px;
+    border-radius: 20px;
+    -webkit-appearance: none;
+    margin-right: 20px;
+    margin-top: 15px;
+    width: 160px;
+}
     </style>
 </head>
 <body>
     <header>
-        <nav>
-            <label class="logo">DayDay Date</label>
-            <ul>
-                <li>通知</li>
-            </ul>
-        </nav>
-</header>
-<div class="sign-up">
-    <h1>Sign up</h1>
-    <form action="includes/signup">
-        <input type="email"class="input-box"placeholder="account">
-        <input type="password"class="input-box"placeholder="password">
-        <input type="password"class="input-box"placeholder="confirm password">
-        <input type="email"class="input-box"placeholder="email">
-        <button type="button"class="signup-btn">Sign up</button>
-    </form>
-</div>
+            <nav>
+                <form>
+                    <input type="search">
+                </form>
+                <label class="logo">DayDay Date</label>
+            </nav>
+    </header>
+    <div class="sign-up">
+        <h1>Log in</h1>
+        <form>
+            <input type="email"class="input-box"placeholder="account">
+            <input type="password"class="input-box"placeholder="password">
+            <div class="fsBtn">
+                <p div class="sign-in"><a href="signin.html">Sign in</a></p>
+                <p div class="forgot"><a href="forget.html">Forget pwd</a></p>
+            </div>
+            <button type="button"class="signup-btn">Log in</button>
+        </form>
+    </div>
 </body>
 </html>
