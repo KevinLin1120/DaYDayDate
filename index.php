@@ -19,7 +19,16 @@
 <body>
     <?php
         require('./header.php');
-        require('./calender/calendar.php')
+        require('./calender/calendar.php');
+
+        //Get DB data
+        // while($row_result = $result -> fetch_assoc()){
+        //     echo ('<h1>' . $row_result['_id'] . '</h1>');
+        // }
     ?>
+
+    <script>
+        
+    </script>
 </body>
 </html>

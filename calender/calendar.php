@@ -127,9 +127,8 @@
     </style>
 
     <script>
-      
-      var setTitle,setDateStart, setDateEnd;
-
+      var setTitle ,setDateStart, setDateEnd;
+      /*
       document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
         var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -153,8 +152,30 @@
 
         calendar.render();
       });
+      */
 
       $(document).ready(function(){
+          var calendarEl = document.getElementById('calendar');
+          var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            locale:'zh-tw',
+            navLinks: true,
+            
+            headerToolbar:{
+              left:'prev,next today',
+              center:'title',
+              right:'dayGridMonth,dayGridWeek',
+              
+            },
+            events:[
+              {title:"test1",start:"2022-0501",end:""},
+              {title:"test2",start:"2022-06-17T18:33",end:"2022-0502T12:00:00"},
+              {title:"test3",start:"2022-06-08T00:24",end:""},
+              {title: setTitle,start: setDateStart,end: setDateEnd}
+            ],
+          });
+          calendar.render();
+          
           $("#fc-dom-1").append('<button type="button" class="btn btn-primary" id="add" data-toggle="modal" data-target="#editCard">新增行程</button>');
           $('#add').click(function(){
             $('.CARD').show();
@@ -171,6 +192,7 @@
                   isPublic = true;
               }
           });
+
           $('#confirm').click(function(){
             console.log("yes");
             const SetTitle = document.getElementById('title');
@@ -184,10 +206,19 @@
             const SetEndTime = document.getElementById('endDT');
             setDateEnd = SetEndTime.value;
             console.log(setDateEnd);
+
             console.log(setTitle,setDateStart,setDateEnd);
-            // setDateEnd.text($('#endDT').text());
+
+            
           });
+          events:[
+            {title: setTitle,start: setDateStart,end: setDateEnd}
+          ]
+          calendar.render();
+          
+
       });
+      
     </script>
     
   </head>
@@ -256,7 +287,7 @@
                       </form>
                   </div>
                   <div class="modal-footer">
-                    <button type="cancel" class="btn btn-cancel" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-cancel" data-dismiss="modal">取消</button>
                     <button type="button" class="btn btn-primary" id="confirm" data-dismiss="modal">確定</button>
                   </div>
               </div>
