@@ -154,12 +154,14 @@
     </style>
 
     <script>
+      
       document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
         var calendar = new FullCalendar.Calendar(calendarEl, {
           initialView: 'dayGridMonth',
           locale:'zh-tw',
           navLinks: true,
+          
           headerToolbar:{
             left:'prev,next today',
             center:'title',
@@ -169,21 +171,19 @@
           events:[
             {title:"test1",start:"2022-0501",end:""},
             {title:"test2",start:"2022-0502T11:00:00",end:"2022-0502T12:00:00"},
-            {title:"test3",start:"2022-0509T11:00:00",end:"2022-0511T11:00:00"},
-            {title:"test4",start:"2022-0510T11:00:00",end:"2022-0511T11:00:00"}
+            {title:"test3",start:"2022-0509T11:00:00",end:"2022-0511T11:00:00"}
           ]
 
         });
         calendar.render();
-        
       });
+
       $(document).ready(function(){
           $("#fc-dom-1").append('<button type="button" class="btn btn-primary" id="add" data-toggle="modal" data-target="#editCard">新增行程</button>');
           $('#add').click(function(){
             $('.CARD').show();
           });
-        }
-      );
+      });
 
       $(document).ready(function(){
           var isPublic = true;
@@ -197,7 +197,7 @@
                   isPublic = true;
               }
           });
-          $('btn btn-confirm').click(function(){
+          $('#btn btn-confirm').click(function(){
             
           });
       });
