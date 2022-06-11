@@ -1,4 +1,10 @@
-
+<?php
+//Get schedule data
+    require("./includes/dbConn.inc.php");
+    $sql_query = "SELECT * FROM schedule ORDER BY _ID ASC";
+    $result = $db_link -> query($sql_query);
+    $total = $result -> num_rows;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +25,66 @@
 <body>
     <?php
         require('./header.php');
-        require('./calender/calendar.php')
+        require('./calender/calendar.php');
+
+        //Get DB data
+        // while($row_result = $result -> fetch_assoc()){
+        //     echo ('<h1>' . $row_result['_id'] . '</h1>');
+        // }
     ?>
+    <script>
+        var scheData = [];
+        var title, stDT, enDT;
+            // $scheData;
+            //Get DB data
+        <?php while($row_result = $result -> fetch_assoc()){ ?>
+            title = <?php echo $row_result["title"] ?>;
+            stDT = <?php echo$row_result["stDT"] ?>;
+            enDT = <?php echo $row_result["enDT"] ?>;
+                scheData.append({
+                    title: title,
+                    start: stDT,
+                    end: enDT
+                });
+                // $scheData[0] = ();
+                // $scheData[1] = ($row_result["stDT"]);
+                // $scheData[2] = ($row_result["enDT"]);
+                // echo ('<h1>' . $scheData[0] . '</h1>');
+                // echo ('<h1>' . $scheData[1] . '</h1>');
+                // echo ('<h1>' . $scheData[2] . '</h1>');
+        <?php } ?>
+        
+        // var data = [{title:"test1",start:"2022-0601",end:""}];
+        
+        // for(var i = 0; i < total; i++){
+            
+        //     data.append({title: });
+        //     console.log("t");
+        // }
+
+        document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth',
+          locale:'zh-tw',
+          navLinks: true,
+
+          headerToolbar:{
+            left:'prev,next today',
+            center:'title',
+            right:'dayGridMonth,dayGridWeek',
+            
+          },
+          events: scheData
+        //   events:[
+        //     { title:"test1",start:"2022-0601 16:40:03",end:""},
+        //     {title:"test2",start:"2022-0502T11:00:00",end:"2022-0502T12:00:00"},
+        //     {title:"test3",start:"2022-0509T11:00:00",end:"2022-0511T11:00:00"}
+        //   ]
+
+        });
+        calendar.render();
+      });
+    </script>
 </body>
 </html>
