@@ -1,17 +1,7 @@
 <!DOCTYPE html>
 <html lang='en'>
   <head>
-  <link href='./src/main.css' rel='stylesheet'>
-    <script src='./src/main.js'></script>
-
-    <script src="./src/locales-all.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- <script src="card/cards.html"></script> --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
-    <script src="./src/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet"  href="./style.css">
-    <link rel="stylesheet"  href="./card/cards.css">
+    
 
     <style>
       
@@ -138,6 +128,8 @@
 
     <script>
       
+      var setTitle,setDateStart, setDateEnd;
+
       document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
         var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -153,11 +145,12 @@
           },
           events:[
             {title:"test1",start:"2022-0501",end:""},
-            {title:"test2",start:"2022-0502T11:00:00",end:"2022-0502T12:00:00"},
-            {title:"test3",start:"2022-0509T11:00:00",end:"2022-0511T11:00:00"}
-          ]
-
+            {title:"test2",start:"2022-06-17T18:33",end:"2022-0502T12:00:00"},
+            {title:"test3",start:"2022-0509T11:00:00",end:"2022-0511T11:00:00"},
+            {title:setTitle,start:setDateStart,end:setDateEnd}
+          ],
         });
+
         calendar.render();
       });
 
@@ -166,9 +159,7 @@
           $('#add').click(function(){
             $('.CARD').show();
           });
-      });
 
-      $(document).ready(function(){
           var isPublic = true;
           $("#isPublic").mouseup(function(){
               if(isPublic){ // If it's public, switch to private
@@ -180,11 +171,25 @@
                   isPublic = true;
               }
           });
-          $('#btn btn-confirm').click(function(){
+          $('#confirm').click(function(){
+            console.log("yes");
+            const SetTitle = document.getElementById('title');
+            setTitle = SetTitle.value;
+            console.log(setTitle);
             
+            const SetStartTime = document.getElementById('startDT');
+            setDateStart = SetStartTime.value;
+            console.log(setDateStart);
+
+            const SetEndTime = document.getElementById('endDT');
+            setDateEnd = SetEndTime.value;
+            console.log(setDateEnd);
+            console.log(setTitle,setDateStart,setDateEnd);
+            // setDateEnd.text($('#endDT').text());
           });
       });
     </script>
+    
   </head>
 
   <body>
@@ -224,15 +229,15 @@
                           <table id="cardInput">
                               <tr>
                                   <td>標題：</td>
-                                  <td><input type="text" name="title"></td>
+                                  <td><input type="text" name="title" id="title"></td>
                               </tr>
                               <tr>
                                   <td>起始日期：</td>
-                                  <td><input type="datetime-local" name="startDT"></td>
+                                  <td><input type="datetime-local" name="startDT" id="startDT"></td>
                               </tr>
                               <tr>
                                   <td>結束日期：</td>
-                                  <td><input type="datetime-local" name="endDT"></td>
+                                  <td><input type="datetime-local" name="endDT" id="endDT"></td>
                               </tr>
                               <tr>
                                   <td>連結：</td>
@@ -251,8 +256,8 @@
                       </form>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-cancel" data-dismiss="modal">取消</button>
-                    <button type="button" class="btn btn-confirm">儲存</button>
+                    <button type="cancel" class="btn btn-cancel" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="confirm" data-dismiss="modal">確定</button>
                   </div>
               </div>
           </div>

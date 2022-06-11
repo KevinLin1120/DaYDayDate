@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset='utf-8' />
+    <meta charset='utf-8' />
     <link href='./calender/src/main.css' rel='stylesheet'>
     <script src='./calender/src/main.js'></script>
 
