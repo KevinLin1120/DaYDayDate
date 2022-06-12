@@ -127,7 +127,8 @@
     </style>
 
     <script>
-      var setTitle ,setDateStart, setDateEnd;
+      /* */
+      var setID, setTitle ,setDateStart, setDateEnd;
       /*
       document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
@@ -157,24 +158,6 @@
       $(document).ready(function(){
           var calendarEl = document.getElementById('calendar');
           
-          $('#confirm').click(function(){
-            console.log("yes");
-            const SetTitle = document.getElementById('title');
-            setTitle = SetTitle.value;
-            console.log(setTitle);
-            
-            const SetStartTime = document.getElementById('startDT');
-            setDateStart = SetStartTime.value;
-            console.log(setDateStart);
-
-            const SetEndTime = document.getElementById('endDT');
-            setDateEnd = SetEndTime.value;
-            console.log(setDateEnd);
-
-            console.log(setTitle,setDateStart,setDateEnd);
-            
-          });
-          
           var calendar = new FullCalendar.Calendar(calendarEl, {
             initialView: 'dayGridMonth',
             locale:'zh-tw',
@@ -187,11 +170,22 @@
               
             },
             events:[
-              {title:"test1",start:"2022-0501",end:""},
-              {title:"test2",start:"2022-06-17T18:33",end:"2022-0502T12:00:00"},
-              {title:"test3",start:"2022-06-08T00:24",end:""},
-              {title: setTitle,start: setDateStart,end: setDateEnd}
+              {id:"1",title:"test1",start:"2022-06-17T18:33",end:""},
+              {id:"2",title:"test1",start:"2022-06-08T00:24",end:"2022-06-08T00:24"},
+              // {title:"test2",start:"2022-06-17T18:33",end:"2022-0502T12:00:00"},
+              // {title:"test3",start:"2022-06-08T00:24",end:""},
+              {id:setID, title: setTitle,start: setDateStart,end: setDateEnd}
             ],
+            /**/
+            eventRender: function(event, element) {
+              element.append( "<span class='closeon'>X</span>" );
+              element.find(".closeon").click(function() {
+                $('#calendar').fullCalendar('removeEvents',event._id);
+              });
+            },
+            /*eventClick: function(events){
+              console.log(setID, setTitle, setDateStart, setDateEnd);
+            }*/
             
           });
 
@@ -214,6 +208,24 @@
               }
           });
 
+          /** */
+          $('#confirm').click(function(){
+            console.log("yes");
+            const SetTitle = document.getElementById('title');
+            setTitle = SetTitle.value;
+            console.log(setTitle);
+            
+            const SetStartTime = document.getElementById('startDT');
+            setDateStart = SetStartTime.value;
+            console.log(setDateStart);
+
+            const SetEndTime = document.getElementById('endDT');
+            setDateEnd = SetEndTime.value;
+            console.log(setDateEnd);
+
+            console.log(setTitle,setDateStart,setDateEnd);
+            calendar.addEvent({title: setTitle, start: setDateStart,end: setDateEnd});
+          });
           
           
           //calendar.render();
