@@ -14,7 +14,7 @@
         //Close the statement
         $stmt -> close();
         $db_link -> close();
-        echo "alert('Update Successfully!')";
+        echo "alert('delete Successfully!')";
         header("location: ./index.php");
     }
 ?>

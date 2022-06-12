@@ -38,10 +38,10 @@
             // $scheData;
             //Get DB data
         <?php while($row_result = $result -> fetch_assoc()){ ?>
-            title = <?php echo $row_result["title"] ?>;
-            stDT = <?php echo$row_result["stDT"] ?>;
-            enDT = <?php echo $row_result["enDT"] ?>;
-                scheData.append({
+            title = "<?php echo $row_result["title"] ?>";
+            stDT = "<?php echo$row_result["stDT"] ?>";
+            enDT = "<?php echo $row_result["enDT"] ?>";
+                scheData.push({
                     title: title,
                     start: stDT,
                     end: enDT
@@ -61,30 +61,51 @@
         //     data.append({title: });
         //     console.log("t");
         // }
+        
 
         document.addEventListener('DOMContentLoaded', function() {
-        var calendarEl = document.getElementById('calendar');
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-          initialView: 'dayGridMonth',
-          locale:'zh-tw',
-          navLinks: true,
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            locale:'zh-tw',
+            navLinks: true,
 
-          headerToolbar:{
-            left:'prev,next today',
-            center:'title',
-            right:'dayGridMonth,dayGridWeek',
-            
-          },
-          events: scheData
-        //   events:[
-        //     { title:"test1",start:"2022-0601 16:40:03",end:""},
-        //     {title:"test2",start:"2022-0502T11:00:00",end:"2022-0502T12:00:00"},
-        //     {title:"test3",start:"2022-0509T11:00:00",end:"2022-0511T11:00:00"}
-        //   ]
+            headerToolbar:{
+                left:'prev,next today',
+                center:'title',
+                right:'dayGridMonth,dayGridWeek',
+                
+            },
+            events: scheData,
+            id:setID, title: setTitle,start: setDateStart,end: setDateEnd,
+            //   events:[
+            //     { title:"test1",start:"2022-0601 16:40:03",end:""},
+            //     {title:"test2",start:"2022-0502T11:00:00",end:"2022-0502T12:00:00"},
+            //     {title:"test3",start:"2022-0509T11:00:00",end:"2022-0511T11:00:00"}
+            //   ]
 
+            });
+            calendar.render();
+
+            var setID, setTitle ,setDateStart, setDateEnd;
+            $('#confirm').click(function(){
+                //console.log("yes");
+                const SetTitle = document.getElementById('title');
+                setTitle = SetTitle.value;
+                //console.log(setTitle);
+                
+                const SetStartTime = document.getElementById('startDT');
+                setDateStart = SetStartTime.value;
+                //console.log(setDateStart);
+
+                const SetEndTime = document.getElementById('endDT');
+                setDateEnd = SetEndTime.value;
+                // console.log(setDateEnd);
+
+                console.log(setTitle,setDateStart,setDateEnd);
+                calendar.addEvent({title: setTitle, start: setDateStart,end: setDateEnd});
+            });
         });
-        calendar.render();
-      });
     </script>
 </body>
 </html>

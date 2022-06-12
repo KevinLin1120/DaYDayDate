@@ -131,23 +131,27 @@
           $('#add').click(function(){
             $('.CARD').show();
           });
-      });
+      
+          
 
-      $(document).ready(function(){
-          var isPublic = true;
-          $("#isPublic").mouseup(function(){
-              if(isPublic){ // If it's public, switch to private
-                  $(this).css("background-image", 'url(./card/images/lock.svg)');
-                  isPublic = false;
-              }
-              else{ // If it's private, switch to public
-                  $(this).css("background-image", 'url(./card/images/unlock.svg)');
-                  isPublic = true;
-              }
-          });
-          $('#btn btn-confirm').click(function(){
+        //   var setID, setTitle ,setDateStart, setDateEnd;
+        //   $('#confirm').click(function(){
+        //     //console.log("yes");
+        //     const SetTitle = document.getElementById('title');
+        //     setTitle = SetTitle.value;
+        //     //console.log(setTitle);
             
-          });
+        //     const SetStartTime = document.getElementById('startDT');
+        //     setDateStart = SetStartTime.value;
+        //     //console.log(setDateStart);
+
+        //     const SetEndTime = document.getElementById('endDT');
+        //     setDateEnd = SetEndTime.value;
+        //     // console.log(setDateEnd);
+
+        //     console.log(setTitle,setDateStart,setDateEnd);
+        //    calendar.addEvent({title: setTitle, start: setDateStart,end: setDateEnd});
+        //   });
       });
     </script>
   </head>
@@ -189,15 +193,15 @@
                           <table id="cardInput">
                               <tr>
                                   <td>標題：</td>
-                                  <td><input type="text" name="title"></td>
+                                  <td><input type="text" name="title" id="title"></td>
                               </tr>
                               <tr>
                                   <td>起始日期：</td>
-                                  <td><input type="datetime-local" name="startDT"></td>
+                                  <td><input type="datetime-local" name="startDT" id="startDT" ></td>
                               </tr>
                               <tr>
                                   <td>結束日期：</td>
-                                  <td><input type="datetime-local" name="endDT"></td>
+                                  <td><input type="datetime-local" name="endDT" id="endDT"></td>
                               </tr>
                               <tr>
                                   <td>連結：</td>
@@ -217,7 +221,7 @@
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-cancel" data-dismiss="modal">取消</button>
-                    <button type="button" class="btn btn-confirm">儲存</button>
+                    <button type="button" class="btn btn-confirm" id="confirm" data-dismiss="modal">儲存</button>
                   </div>
               </div>
           </div>
