@@ -20,7 +20,7 @@
     .sign-up{
         border-radius: 10px;
         width: 450px;
-        height: 450px;
+        height: 400px;
         box-shadow: 0 0 3px 0 rgba(0,0,0,0);
         background: rgba(255, 255, 255, 0.797);
         padding:20px;
@@ -29,8 +29,23 @@
     }
     .sign-up h1{
         margin-bottom: 30px;
+        margin-top: 20px;
     }
-    .input-box{       
+    .sign-in{
+        text-align: left;
+    }
+    .sign-in a{
+        color:lightslategray;
+    }
+    .forgot{
+        text-align: right;
+        margin-left: auto;
+    }
+    .forgot a{
+        color:lightslategray;
+    }
+    .input-box{
+       
         padding: 10px;
         margin: 10px 0;
         width: 70%;
@@ -44,7 +59,7 @@
         padding: 10px;
         border-radius: 20px;
         font-size: 18px;
-        margin: 20px 0;
+        margin: 60px 0;
         border:none;
         outline: none;
         cursor: pointer;
@@ -66,51 +81,38 @@
         color:black;
         font-size: 36px;
         line-height: 80px;
-
-        padding: 0 60px;
-
         padding: 0 50px;
-
         font-weight: bold;
     }
     nav ul{
         float: right;
         margin-right: 20px;
     }
-
+    .fsBtn{
+        display: flex;
+        padding: 0 65px;
+        text-decoration: underline;
+    }
     input[type=search] {
     float: right;
     border: 1px solid #000;
     padding: 4px 12px;
     border-radius: 20px;
-    width: 160px;
     -webkit-appearance: none;
     margin-right: 20px;
     margin-top: 15px;
+    width: 160px;
 }
-    .text-danger{
-        color: red;
-        margin-top: 20px;
-    }
-    
-
     </style>
 </head>
 <body>
     <header>
         <nav>
-
-            <label class="logo">DayDay Date</label>
-            <ul>
-                <li>通知</li>
-            </ul>
-
-            <form class="search">
+            <form>
                 <input type="search">
             </form>
-            
-
+            <label class="logo">DayDay Date</label>
         </nav>
-</header>
+    </header>
 </body>
 </html>
