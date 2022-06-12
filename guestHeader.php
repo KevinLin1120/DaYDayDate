@@ -92,7 +92,7 @@
         color: red;
         margin-top: 20px;
     }
-    .search
+    
 
     </style>
 </head>
