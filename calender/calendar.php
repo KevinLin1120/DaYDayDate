@@ -156,6 +156,25 @@
 
       $(document).ready(function(){
           var calendarEl = document.getElementById('calendar');
+          
+          $('#confirm').click(function(){
+            console.log("yes");
+            const SetTitle = document.getElementById('title');
+            setTitle = SetTitle.value;
+            console.log(setTitle);
+            
+            const SetStartTime = document.getElementById('startDT');
+            setDateStart = SetStartTime.value;
+            console.log(setDateStart);
+
+            const SetEndTime = document.getElementById('endDT');
+            setDateEnd = SetEndTime.value;
+            console.log(setDateEnd);
+
+            console.log(setTitle,setDateStart,setDateEnd);
+            
+          });
+          
           var calendar = new FullCalendar.Calendar(calendarEl, {
             initialView: 'dayGridMonth',
             locale:'zh-tw',
@@ -173,7 +192,9 @@
               {title:"test3",start:"2022-06-08T00:24",end:""},
               {title: setTitle,start: setDateStart,end: setDateEnd}
             ],
+            
           });
+
           calendar.render();
           
           $("#fc-dom-1").append('<button type="button" class="btn btn-primary" id="add" data-toggle="modal" data-target="#editCard">新增行程</button>');
@@ -193,29 +214,9 @@
               }
           });
 
-          $('#confirm').click(function(){
-            console.log("yes");
-            const SetTitle = document.getElementById('title');
-            setTitle = SetTitle.value;
-            console.log(setTitle);
-            
-            const SetStartTime = document.getElementById('startDT');
-            setDateStart = SetStartTime.value;
-            console.log(setDateStart);
-
-            const SetEndTime = document.getElementById('endDT');
-            setDateEnd = SetEndTime.value;
-            console.log(setDateEnd);
-
-            console.log(setTitle,setDateStart,setDateEnd);
-
-            
-          });
-          events:[
-            {title: setTitle,start: setDateStart,end: setDateEnd}
-          ]
-          calendar.render();
           
+          
+          //calendar.render();
 
       });
       
