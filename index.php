@@ -104,6 +104,7 @@
 
                 console.log(setTitle,setDateStart,setDateEnd);
                 calendar.addEvent({title: setTitle, start: setDateStart,end: setDateEnd});
+                // header("Location: ./includes/addSche.inc.php");
             });
         });
     </script>

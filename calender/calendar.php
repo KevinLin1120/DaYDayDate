@@ -214,7 +214,7 @@
                       <!-- <h5 class="modal-title" id="cardModalLabel">Modal title</h5> -->
                   </div>
                   <div class="modal-body">
-                      <form action="" method="post" name="eventCard">
+                      <form action="../includes/addSche.inc.php" method="post" name="eventCard">
                           <table id="cardInput">
                               <tr>
                                   <td>標題：</td>
@@ -246,7 +246,7 @@
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-cancel" data-dismiss="modal">取消</button>
-                    <button type="button" class="btn btn-primary" id="confirm" data-dismiss="modal">確定</button>
+                    <button type="submit" class="btn btn-primary" id="confirm" name="confirm" data-dismiss="modal">確定</button>
                   </div>
               </div>
           </div>

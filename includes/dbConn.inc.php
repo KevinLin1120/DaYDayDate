@@ -2,7 +2,7 @@
     //DB info
     $db_host = "localhost";
     $db_username = "root";
-    $db_pwd = "";
+    $db_pwd = "0000";
     $db_name = "dddate";
 
     //Connect to the DB
