@@ -20,7 +20,7 @@
     .sign-up{
         border-radius: 10px;
         width: 450px;
-        height: 400px;
+        height: 450px;
         box-shadow: 0 0 3px 0 rgba(0,0,0,0);
         background: rgba(255, 255, 255, 0.797);
         padding:20px;
@@ -88,6 +88,11 @@
     margin-right: 20px;
     margin-top: 15px;
 }
+    .text-danger{
+        color: red;
+        margin-top: 20px;
+    }
+    .search
 
     </style>
 </head>
@@ -100,7 +105,7 @@
                 <li>通知</li>
             </ul>
 
-            <form>
+            <form class="search">
                 <input type="search">
             </form>
             

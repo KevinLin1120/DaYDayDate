@@ -44,7 +44,7 @@
                         exit();
                     }else{
                         $hasdedPW=password_hash($password,PASSWORD_DEFAULT);
-                        mysqli_stmt_bind_param($stmt,"sss",$account,$email,$hasdedPW);
+                        mysqli_stmt_bind_param($stmt,"sss",$account,$hasdedPW,$email);
                         mysqli_stmt_execute($stmt);
                         mysqli_stmt_store_result($stmt);
                         header("Location:../guest.php?info=success");   
