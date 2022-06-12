@@ -128,47 +128,29 @@
 
     <script>
       $(document).ready(function(){
-          var calendarEl = document.getElementById('calendar');
-          
-          $('#confirm').click(function(){
-            console.log("yes");
-            const SetTitle = document.getElementById('title');
-            setTitle = SetTitle.value;
-            console.log(setTitle);
-            
-            const SetStartTime = document.getElementById('startDT');
-            setDateStart = SetStartTime.value;
-            console.log(setDateStart);
 
-            const SetEndTime = document.getElementById('endDT');
-            setDateEnd = SetEndTime.value;
-            console.log(setDateEnd);
-
-            console.log(setTitle,setDateStart,setDateEnd);
+        //   var calendarEl = document.getElementById('calendar');
+        //   var calendar = new FullCalendar.Calendar(calendarEl, {
+        //     initialView: 'dayGridMonth',
+        //     locale:'zh-tw',
+        //     navLinks: true,
             
-          });
-          
-          var calendar = new FullCalendar.Calendar(calendarEl, {
-            initialView: 'dayGridMonth',
-            locale:'zh-tw',
-            navLinks: true,
-            
-            headerToolbar:{
-              left:'prev,next today',
-              center:'title',
-              right:'dayGridMonth,dayGridWeek',
+        //     headerToolbar:{
+        //       left:'prev,next today',
+        //       center:'title',
+        //       right:'dayGridMonth,dayGridWeek',
               
-            },
-            events:[
-              {title:"test1",start:"2022-0501",end:""},
-              {title:"test2",start:"2022-06-17T18:33",end:"2022-0502T12:00:00"},
-              {title:"test3",start:"2022-06-08T00:24",end:""},
-              {title: setTitle,start: setDateStart,end: setDateEnd}
-            ],
+        //     },
+        //     events:[
+        //       {title:"test1",start:"2022-0501",end:""},
+        //       {title:"test2",start:"2022-06-17T18:33",end:"2022-0502T12:00:00"},
+        //       {title:"test3",start:"2022-06-08T00:24",end:""},
+        //       {title: setTitle,start: setDateStart,end: setDateEnd}
+        //     ],
             
-          });
+        //   });
 
-          calendar.render();
+        //   calendar.render();
           
           $("#fc-dom-1").append('<button type="button" class="btn btn-primary" id="add" data-toggle="modal" data-target="#editCard">新增行程</button>');
           $('#add').click(function(){
@@ -230,7 +212,6 @@
                           <span aria-hidden="true">&times;</span>
                       </button>
                       <!-- <h5 class="modal-title" id="cardModalLabel">Modal title</h5> -->
-                      <button id="isPublic"></button>
                   </div>
                   <div class="modal-body">
                       <form action="" method="post" name="eventCard">
