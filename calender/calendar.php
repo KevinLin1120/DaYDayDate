@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang='en'>
   <head>
-    
+
 
     <style>
       
@@ -127,33 +127,6 @@
     </style>
 
     <script>
-      var setTitle ,setDateStart, setDateEnd;
-      /*
-      document.addEventListener('DOMContentLoaded', function() {
-        var calendarEl = document.getElementById('calendar');
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-          initialView: 'dayGridMonth',
-          locale:'zh-tw',
-          navLinks: true,
-          
-          headerToolbar:{
-            left:'prev,next today',
-            center:'title',
-            right:'dayGridMonth,dayGridWeek',
-            
-          },
-          events:[
-            {title:"test1",start:"2022-0501",end:""},
-            {title:"test2",start:"2022-06-17T18:33",end:"2022-0502T12:00:00"},
-            {title:"test3",start:"2022-0509T11:00:00",end:"2022-0511T11:00:00"},
-            {title:setTitle,start:setDateStart,end:setDateEnd}
-          ],
-        });
-
-        calendar.render();
-      });
-      */
-
       $(document).ready(function(){
           var calendarEl = document.getElementById('calendar');
           
@@ -201,23 +174,26 @@
           $('#add').click(function(){
             $('.CARD').show();
           });
-
-          var isPublic = true;
-          $("#isPublic").mouseup(function(){
-              if(isPublic){ // If it's public, switch to private
-                  $(this).css("background-image", 'url(./card/images/lock.svg)');
-                  isPublic = false;
-              }
-              else{ // If it's private, switch to public
-                  $(this).css("background-image", 'url(./card/images/unlock.svg)');
-                  isPublic = true;
-              }
-          });
-
           
-          
-          //calendar.render();
 
+        //   var setID, setTitle ,setDateStart, setDateEnd;
+        //   $('#confirm').click(function(){
+        //     //console.log("yes");
+        //     const SetTitle = document.getElementById('title');
+        //     setTitle = SetTitle.value;
+        //     //console.log(setTitle);
+            
+        //     const SetStartTime = document.getElementById('startDT');
+        //     setDateStart = SetStartTime.value;
+        //     //console.log(setDateStart);
+
+        //     const SetEndTime = document.getElementById('endDT');
+        //     setDateEnd = SetEndTime.value;
+        //     // console.log(setDateEnd);
+
+        //     console.log(setTitle,setDateStart,setDateEnd);
+        //    calendar.addEvent({title: setTitle, start: setDateStart,end: setDateEnd});
+        //   });
       });
       
     </script>
@@ -265,7 +241,7 @@
                               </tr>
                               <tr>
                                   <td>起始日期：</td>
-                                  <td><input type="datetime-local" name="startDT" id="startDT"></td>
+                                  <td><input type="datetime-local" name="startDT" id="startDT" ></td>
                               </tr>
                               <tr>
                                   <td>結束日期：</td>
