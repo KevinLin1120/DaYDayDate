@@ -38,10 +38,13 @@
             // $scheData;
             //Get DB data
         <?php while($row_result = $result -> fetch_assoc()){ ?>
+            id = "<?php echo $row_result["_id"] ?>";
             title = "<?php echo $row_result["title"] ?>";
             stDT = "<?php echo$row_result["stDT"] ?>";
             enDT = "<?php echo $row_result["enDT"] ?>";
+            alert(stDT);
                 scheData.push({
+                    id: id,
                     title: title,
                     start: stDT,
                     end: enDT
@@ -76,8 +79,14 @@
                 right:'dayGridMonth,dayGridWeek',
                 
             },
+            //Schedule events
             events: scheData,
-            id:setID, title: setTitle,start: setDateStart,end: setDateEnd,
+            id: setID, title: setTitle, start: setDateStart, end: setDateEnd,
+            selectable: true, //Let schedule selectable
+            selectHelper: true,
+            select: function(event){
+
+            }
             //   events:[
             //     { title:"test1",start:"2022-0601 16:40:03",end:""},
             //     {title:"test2",start:"2022-0502T11:00:00",end:"2022-0502T12:00:00"},
