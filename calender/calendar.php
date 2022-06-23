@@ -152,7 +152,9 @@
 
         //   calendar.render();
           
-          $("#fc-dom-1").append('<button type="button" class="btn btn-primary" id="add" data-toggle="modal" data-target="#editCard">新增行程</button>');
+          $("#fc-dom-1").append(
+            '<button type="button" class="btn btn-primary" id="add"' +
+            'data-toggle="modal" data-target="#editCard">新增行程</button>');
           $('#add').click(function(){
             $('.CARD').show();
           });
@@ -176,6 +178,18 @@
         //     console.log(setTitle,setDateStart,setDateEnd);
         //    calendar.addEvent({title: setTitle, start: setDateStart,end: setDateEnd});
         //   });
+
+        //Button isPublic status switch
+            $("#isPublic").mouseup(function(){
+                if($("#isPublic").val() == "1"){ // If it's public, switch to private
+                    $(this).css("background-image", 'url(./card/images/lock.svg)');
+                    $("#isPublic").attr("value", "0");
+                }
+                else{ // If it's private, switch to public
+                    $(this).css("background-image", 'url(./card/images/unlock.svg)');
+                    $("#isPublic").attr("value", "1");
+                }
+            });
       });
       
     </script>
@@ -207,47 +221,48 @@
         <div class="modal fade" id="editCard" tabindex="-1" aria-labelledby="cardModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
               <div class="modal-content setCard">
+                <form action="./includes/addSche.inc.php" method="post" name="eventCard">
                   <div class="modal-header">
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                       </button>
-                      <!-- <h5 class="modal-title" id="cardModalLabel">Modal title</h5> -->
+                      <button type="button" id="isPublic" value="1" name="isPublic"></button>
                   </div>
-                  <div class="modal-body">
-                      <form action="../includes/addSche.inc.php" method="post" name="eventCard">
-                          <table id="cardInput">
-                              <tr>
-                                  <td>標題：</td>
-                                  <td><input type="text" name="title" id="title"></td>
-                              </tr>
-                              <tr>
-                                  <td>起始日期：</td>
-                                  <td><input type="datetime-local" name="startDT" id="startDT" ></td>
-                              </tr>
-                              <tr>
-                                  <td>結束日期：</td>
-                                  <td><input type="datetime-local" name="endDT" id="endDT"></td>
-                              </tr>
-                              <tr>
-                                  <td>連結：</td>
-                                  <td><input type="text" name="link"></td>
-                              </tr>
-                              <tr>
-                                  <td>邀請：</td>
-                                  <td><input type="text" name="invite"></td>
-                              </tr>
-                              <tr>
-                                  <td>顏色分類：</td>
-                                  <td><input type="color" name="color"></td>
-                              </tr>
-                          </table>
-                          <textarea class="test" rows="3" placeholder="備註： "></textarea>
-                      </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-cancel" data-dismiss="modal">取消</button>
-                    <button type="submit" class="btn btn-primary" id="confirm" name="confirm" data-dismiss="modal">確定</button>
-                  </div>
+                    <div class="modal-body">
+                        <table id="cardInput">
+                            <tr>
+                                <td>標題：</td>
+                                <td><input type="text" name="title" id="title"></td>
+                            </tr>
+                            <tr>
+                                <td>起始日期：</td>
+                                <td><input type="datetime-local" name="startDT" id="startDT" ></td>
+                            </tr>
+                            <tr>
+                                <td>結束日期：</td>
+                                <td><input type="datetime-local" name="endDT" id="endDT"></td>
+                            </tr>
+                            <tr>
+                                <td>連結：</td>
+                                <td><input type="text" name="link"></td>
+                            </tr>
+                            <tr>
+                                <td>邀請：</td>
+                                <td><input type="text" name="invite"></td>
+                            </tr>
+                            <tr>
+                                <td>顏色分類：</td>
+                                <td><input type="color" name="color"></td>
+                            </tr>
+                        </table>
+                        <textarea class="test" rows="3" placeholder="備註： "></textarea>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-cancel" data-dismiss="modal">取消</button>
+                      <button type="submit" class="btn btn-primary" id="confirm" name="confirm">確定</button>
+                      <input type="hidden" name="action" value="confirm">
+                    </div>
+                  </form>
               </div>
           </div>
         </div>

@@ -93,14 +93,17 @@
         margin-top: 20px;
     }
     
-
+    a{
+        text-decoration: none;
+        color: black;
+    }
     </style>
 </head>
 <body>
     <header>
         <nav>
 
-            <label class="logo">DayDay Date</label>
+            <label class="logo"><a href="./index.php">DayDay Date</a> </label>
             <ul>
                 <li>通知</li>
             </ul>
